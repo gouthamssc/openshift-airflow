@@ -93,8 +93,7 @@ ENV PYTHONPATH=${PYTHONPATH:+${PYTHONPATH}:}${AIRFLOW_HOME}
 #   writable as OpenShift default security model is to run the container
 #   under random UID.
 RUN virtualenv-$PYTHON_VERSION ${AIRFLOW_HOME} && \
-    chown -R ${USER_ID}:0 ${AIRFLOW_HOME} && \
-    fix-permissions ${AIRFLOW_HOME} -P
+    chown -R ${USER_ID}:0 ${AIRFLOW_HOME}
 
 RUN ${PIP_ALIAS} install --no-cache-dir ${AIRFLOW_MODULES}==${AIRFLOW_VERSION}
 
