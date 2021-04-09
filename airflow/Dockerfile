@@ -55,8 +55,7 @@ RUN mkdir -p ${HOME}/.pki/nssdb && \
     chown -R ${USER_ID}:0 ${HOME}/.pki && \
     dnf -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
-    dnf -y clean all --enablerepo='*' && \
-    fix-rpm-file-permissions
+    dnf -y clean all --enablerepo='*'
 
 # Add the default user
 RUN useradd -u ${USER_ID} -r -g 0 -d ${HOME} -s /sbin/nologin \
