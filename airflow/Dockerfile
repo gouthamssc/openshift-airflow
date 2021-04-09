@@ -46,7 +46,7 @@ ENV PATH=$HOME/.local/bin/:$PATH
 RUN yum install -y dnf
 
 # Additional packages
-ENV INSTALL_PKGS="autoconf automake make gcc patch unzip python3 python3-devel python3-setuptools python3-pip python3-virtualenv libffi-devel OpenSSL-devel"  
+ENV INSTALL_PKGS="autoconf automake make gcc patch unzip python3 python3-devel python3-setuptools python3-pip python3-virtualenv libffi-devel openssl-devel"  
 
 # Copy scripts to /usr/bin
 COPY ./include/ /
