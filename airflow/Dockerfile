@@ -1,4 +1,4 @@
-FROM fedora:28
+FROM cgprdregistry.capgroup.com/fedora:28
 
 # Image metadata
 ENV NAME="vandayam/openshift-airflow" \
