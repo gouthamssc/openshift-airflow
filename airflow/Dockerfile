@@ -95,6 +95,7 @@ ENV PYTHONPATH=${PYTHONPATH:+${PYTHONPATH}:}${AIRFLOW_HOME}
 RUN virtualenv-$PYTHON_VERSION ${AIRFLOW_HOME} && \
     chown -R ${USER_ID}:0 ${AIRFLOW_HOME}
 
+RUN ${PIP_ALIAS} install --upgrade pip
 RUN ${PIP_ALIAS} install --no-cache-dir ${AIRFLOW_MODULES}==${AIRFLOW_VERSION}
 
 # Create directories so we can own them when we mount volumes
